@@ -1,8 +1,8 @@
-class TodoController < ApplicationController
+class TodosController < ApplicationController
 
 	def index
-		@todos = Todo.where(done: false)
-		@completes = Todo.where(done: true)
+		@todos = Todo.where(completed: false)
+		@completes = Todo.where(completed: true)
 	end
 
 	def new
