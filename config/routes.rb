@@ -4,10 +4,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :todos do
-    user do
-      put :complete
-    end
-  end
+  resources :todos
 
 end
