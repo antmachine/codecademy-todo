@@ -1,0 +1,7 @@
+<h2>Add to your todo list</h2>
+
+<%= form_for @todo do |f| %>
+<%= f.label :name %>: <%= f.text_field :name %>
+<%= f.hidden_field :completed, :value => false %>
+	
+<% end %>

@@ -7,3 +7,14 @@
 		<small> <%= link_to "Mark as Done", todo_path(t), :method => :put %> </small>
 	</p>
 <% end %>
+
+<h2>Completed:</h2>
+
+<% @completes.each do |c| %>
+	<p>
+		<%= c.name %>
+		<small> <%= link_to "Remove", t, :confirm => "Are you sure you'd like to remove this item?", :method => :delete %> </small>
+	</p>
+<% end %>
+
+<p> <%= link_to "Add a todo", new_todo_path %> </p>

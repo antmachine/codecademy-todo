@@ -6,6 +6,7 @@ class TodoController < ApplicationController
 	end
 
 	def new
+		@todo = Todo.new
 		redirect_to todo_index_path
 	end
 
