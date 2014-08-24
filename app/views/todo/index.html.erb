@@ -1,0 +1,9 @@
+<h1>Your todo list!</h1>
+
+<h2>Todo:</h2>
+<% @todos.each do |t| %>
+	<p>
+		<strong> <%= t.name %> </strong>
+		<small> <%= link_to "Mark as Done", todo_path(t), :method => :put %> </small>
+	</p>
+<% end %>
