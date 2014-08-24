@@ -7,13 +7,12 @@ class TodosController < ApplicationController
 
 	def new
 		@todo = Todo.new
-		redirect_to todo_index_path
 	end
 
 	def create
 		@todo = Todo.new(todo_params)
-		if todo.save
-			redirect_to todo_index_path, :notice => "Item has been added to list"
+		if @todo.save
+			redirect_to todos_path, :notice => "Your item has been added to list"
 		else
 			render 'new'
 		end
@@ -30,7 +29,7 @@ class TodosController < ApplicationController
 	def update
 		@todo = Todo.find(params[:id])
 		if @todo.update_attribute(:completed, true)
-			redirect_to todo_index_path, :notice => "Item marked as done!"
+			redirect_to todos_path, :notice => "Item marked as done!"
 		else
 			render 'edit'
 		end
@@ -39,12 +38,7 @@ class TodosController < ApplicationController
 	def destroy
 		@todo = Todo.find(params[:id])
 		@todo.destroy
-		redirect_to todo_index_path, :notice => "Item has been deleted"
-	end
-
-	def complete
-		#TODO user can mark a todo completed
-		redirect_to todo_index_path		
+		redirect_to todos_path, {:notice => "Item has been deleted"}
 	end
 
 	private

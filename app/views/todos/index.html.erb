@@ -13,7 +13,7 @@
 <% @completes.each do |c| %>
 	<p>
 		<%= c.name %>
-		<small> <%= link_to "Remove", t, :confirm => "Are you sure you'd like to remove this item?", :method => :delete %> </small>
+		<small> <%= link_to "Remove", c, :confirm => "Are you sure you'd like to remove this item?", :method => :delete %> </small>
 	</p>
 <% end %>
 
