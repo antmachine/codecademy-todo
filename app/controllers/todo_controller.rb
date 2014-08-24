@@ -1,11 +1,12 @@
 class TodoController < ApplicationController
 
 	def index
-	 	
+		@todos = Todo.where(done: false)
+		@completes = Todo.where(done: true)
 	end
 
 	def new
-		
+		redirect_to todo_index_path
 	end
 
 	def show
@@ -17,10 +18,16 @@ class TodoController < ApplicationController
 	end
 
 	def update
-
+		redirect_to todo_index_path		
 	end
 
 	def destroy
+		redirect_to todo_index_path		
+	end
+
+	def complete
+		#user can mark a todo completed
+		redirect_to todo_index_path		
 		
 	end
 end
