@@ -5,9 +5,10 @@
 	<p>
 		<strong> <%= t.name %> </strong>
 		<small>
-			<%= link_to "Mark as Done", todo_path(t), :method => :put %> 
+			<%= link_to "Mark as Done", completed_path(t), :method => :put  %>
+			<% if can? :manage, t %>
 				<%= link_to "Edit Item", edit_todo_path(t) %>
-
+			<% end %>
 		</small>
 	</p>
 <% end %>
@@ -17,7 +18,9 @@
 <% @completes.each do |c| %>
 	<p>
 		<%= c.name %>
-		<small> <%= link_to "Remove", c, :confirm => "Are you sure you'd like to remove this item?", :method => :delete %> </small>
+		<% if can? :manage, c %>
+			<small> <%= link_to "Remove", c, :confirm => "Are you sure you'd like to remove this item?", :method => :delete %> </small>
+		<% end %>
 	</p>
 <% end %>
 

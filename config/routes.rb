@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  put '/todos/:id', to: 'todos#completed', as: :completed
+
   resources :todos
+
 
 
 
