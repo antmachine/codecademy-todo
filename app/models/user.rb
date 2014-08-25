@@ -6,7 +6,4 @@ class User < ActiveRecord::Base
 
   has_many :todos
 
-  def admin?(user)
-  	user.admin == true
-  end
 end

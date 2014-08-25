@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
   end
 
-protected
+	protected
 
-def configure_permitted_parameters
-	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit( :admin, :email, :password, :password_confirmation) }
-end
+	def configure_permitted_parameters
+		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit( :admin, :email, :password, :password_confirmation) }
+	end
 
 end
