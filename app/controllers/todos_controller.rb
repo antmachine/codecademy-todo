@@ -25,14 +25,12 @@ class TodosController < ApplicationController
 
 	def edit
 		@todo = Todo.find(params[:id])
-		render 'edit'
 	end
 
 	def update
 		@todo = Todo.find(params[:id])
-		Todo.update(@todo)
+		@todo.update todo_params
 		redirect_to todos_path
-		binding.pry
 	end
 
 	def completed
