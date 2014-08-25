@@ -1,0 +1,7 @@
+<h2>Edit this Todo Item</h2>
+
+<%= form_for @todo, :url => {:method => :put} do |t| %>
+	<%= t.label :name %>: <%= t.text_field :name %>
+	<%= t.hidden_field :completed, :value => false %>
+	<%= t.submit "Update Item" %>
+<% end %>

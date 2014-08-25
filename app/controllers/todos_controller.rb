@@ -24,10 +24,11 @@ class TodosController < ApplicationController
 	end
 
 	def edit
+		@todo = Todo.find(params[:id])
 		render 'edit'
 	end
 
-	def update
+	def completed
 		@todo = Todo.find(params[:id])
 		if @todo.update_attribute(:completed, true)
 			redirect_to todos_path, :notice => "Item marked as done!"

@@ -6,9 +6,7 @@
 		<strong> <%= t.name %> </strong>
 		<small>
 			<%= link_to "Mark as Done", todo_path(t), :method => :put %> 
-			<% if can?, :edit, t %>
 				<%= link_to "Edit Item", edit_todo_path(t) %>
-			<% end %>
 
 		</small>
 	</p>
