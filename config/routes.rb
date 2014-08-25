@@ -4,11 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :todos do
-    resources :users do
-      put :completed
-    end
-  end
+  resources :todos
 
 
 
