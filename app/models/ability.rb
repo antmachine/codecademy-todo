@@ -4,7 +4,11 @@ class Ability
   # All abilities for each user type are defined in the initialize method
   # Syntax for abilities - can :action(verb), :resource(ruby model)
   def initialize(user)
-    can :read, :all
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+    end
   end
 end
 
