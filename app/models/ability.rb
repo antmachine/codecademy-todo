@@ -1,6 +1,8 @@
 class Ability
   include CanCan::Ability
-  
+
+  # All abilities for each user type are defined in the initialize method
+  # Syntax for abilities - can :action(verb), :resource(ruby model)
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     if user.admin?

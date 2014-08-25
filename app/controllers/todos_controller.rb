@@ -19,11 +19,12 @@ class TodosController < ApplicationController
 	end
 
 	def show
-		
+		@todo = Todo.find(params[:id])
+		render 'show'
 	end
 
 	def edit
-		
+		render 'edit'
 	end
 
 	def update
@@ -31,7 +32,7 @@ class TodosController < ApplicationController
 		if @todo.update_attribute(:completed, true)
 			redirect_to todos_path, :notice => "Item marked as done!"
 		else
-			render 'edit'
+			redirect_to todos_path, :notice => "There was an error, item unchanged."
 		end
 	end
 
