@@ -1,6 +1,17 @@
-<h2>Add to your todo list</h2>
-<%= form_for @todo do |f| %>
-	<%= f.label :name %>: <%= f.text_field :name %>
-	<%= f.hidden_field :completed, :value => false %>
-	<%= f.submit "Add to list" %>
-<% end %>
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h2>Add to your todo list</h2>
+
+		<%= form_for @todo, html: {:role => "form"} do |f| %>
+		<div class="from-group">
+			<%= f.label :name %>:
+			<%= f.text_field :name, autofocus: true, :class => "form-control" %>
+		</div>	
+			<%= f.hidden_field :completed, :value => false %>
+		<br>
+		<div>	
+			<%= f.submit "Add to list", :class => "btn btn-primary" %>
+		</div>	
+		<% end %>
+	</div>
+</div>

@@ -7,13 +7,8 @@
 			<%= t.label :name %>:
 			<%= t.text_field :name, autofocus: true, :class => "form-control" %>
 		</div>
-			
-		<div class="from-group">	
 			<%= t.hidden_field :completed, :value => false %>
-		</div>
-		
 		<br>
-
 		<div>
 			<%= t.submit "Update Item", :class => "btn btn-primary" %>
 		</div>	
