@@ -1,7 +1,22 @@
-<h2>Edit this Todo Item</h2>
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h2>Edit this Todo Item</h2>
 
-<%= form_for @todo do |t| %>
-	<%= t.label :name %>: <%= t.text_field :name %>
-	<%= t.hidden_field :completed, :value => false %>
-	<%= t.submit "Update Item" %>
-<% end %>
+		<%= form_for @todo, html: {:role => "form"} do |t| %>
+		<div class="from-group">
+			<%= t.label :name %>:
+			<%= t.text_field :name, autofocus: true, :class => "form-control" %>
+		</div>
+			
+		<div class="from-group">	
+			<%= t.hidden_field :completed, :value => false %>
+		</div>
+		
+		<br>
+
+		<div>
+			<%= t.submit "Update Item", :class => "btn btn-primary" %>
+		</div>	
+		<% end %>
+	</div>
+</div>
